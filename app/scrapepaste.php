@@ -1,60 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<title>Bare - Brian's Start Bootstrap Template</title>
 
-<!-- Bootstrap core CSS -->
-	<link href="/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
-<!-- Custom styles for this template -->
-	<style>		body {
-		         padding-top: 54px;
-		       }
-		       @media (min-width: 992px) {
-		         body {
-		           padding-top: 56px;
-		         }
-		       }
-		          
+  <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2498175-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2498175-1');
+</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mayflower Ancestors Help</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        padding-top: 54px;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
+      img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+ul {
+    list-style-type: none;
+     list-style-image: url('../img/mayflower25x25.png');
+}
+
+.box{
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
+  background-image: url('../img/Mayflower-Halsall.jpg');
+}
+
 		      #wordcloud {
-		        width: 1300px;
-		        height: 500px;
+		        width: 100%;
+		        height: 570px;
 		      }
 
-
-		   
-	</style>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </style>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.0.0/d3.js">
 	</script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js">
 	</script>
-</head>
-<body>
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-	<div class="container">
-		<a class="navbar-brand" href="http://brian-fitzgerald.net">A Deep Div Production</a> 
-		<div class="collapse navbar-collapse" id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
-				<li class="nav-item"> <a class="nav-link" href="https://www.buymeacoffee.com/brianfit">About</a> </li>
-				<li class="nav-item"> <a class="nav-link" mailto="brianfit58@gmail.com">Contact</a> </li>
-			</ul>
-		</div>
-	</div>
-</nav>
-<!-- Page Content -->
-<div class="container">
 
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Mayflower Ancestors Help</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+<!-- 
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+ -->
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.buymeacoffee.com/brianfit">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:brianfit58@gmail.com?subject=Mayflower%20Project%20">
+﻿Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<!-- Page Content -->
+
+    <div class="container box">
 
 	<div class="row">
 		<div class="col-lg-12 text-center">
-
+<div id="errorMessages"></div>
 <?php 
 
         $matches = [];
@@ -89,7 +135,7 @@ Begin HTML
 
 <!--     Content loads in this space -->
 
-			<table class="table table-striped table-bordered table-dark">
+			<table class="table table-striped table-bordered ">
 				<thead>
 					<tr>
 						<th scope="col">Kit</th>
@@ -104,10 +150,30 @@ Begin HTML
                         
 			</pre>
 			
-	<button id="CloudButton" style="display: block;">Cloud of Most Frequent Names</button> <button id="TableButton" style="display: none;">Table of Most Frequent Names</button> 
-		<div id="wordcloud"></div>
-    <div id="source"></div>
+			<div id='HeatMapTable' style="display: none;">
+ 
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Number of mentions in matches</th>
+		</tr>
+	</thead>
+	<tbody id="FrequencyTable">
+	</tbody>
+</table>
 
+		
+			
+			</div>
+	<button id="CloudButton" style="display: block;">Cloud of Most Frequent Names</button> <button id="TableButton" style="display: none;">Table of Most Frequent Names</button> 
+
+		<div id="wordcloud"></div>
+    <div id="source"></div>	
+
+
+	</div>
+	</div> <!-- End Row -->
 
 
 
@@ -126,9 +192,11 @@ Begin Script
 				var API_KEY = 'AIzaSyAvqBZcr1jg6Nav_-cgsQGRJnsf3Q3A_bg';
 				        //This Key is URL restricted to use within my domain
 				  var tags = [];
+				  tags.length = 0;
 				  var tagitem = {};
 				              var tagString = "";
 				              var counts = {};
+				              counts.length = 0;
 				  var KitArray = [];
 				  var BooleanDone = false;
 				  //Destroy any data in that array in memory
@@ -146,6 +214,8 @@ Begin Script
 				
 				  var authorizeButton = document.getElementById('authorize_button');
 				  var signoutButton = document.getElementById('signout_button');
+				   var CloudButton = document.getElementById('CloudButton');
+				  var TableButton = document.getElementById('TableButton');
 				
 				  /**
 				   *  On load, called to load the auth2 library and API client library.
@@ -166,11 +236,12 @@ Begin Script
 				                        var KitArray = obj.split("\t").map(function(item) {
 				                        return item.trim();
 				                                });
-
+					KitArray.length = Math.min(KitArray.length, 98);
+					console.log('kl: '+KitArray.length);
 				 for (var v = 0; v < KitArray.length; v++){ 
-				                     listKits(KitArray[v]);}
-				            
-				   
+				                     listKits(KitArray[v]);
+
+				   }
 				   }
 				   
 				   
@@ -189,61 +260,22 @@ Begin Script
 				      scope: SCOPES
 				    }).then(function () {
 				      // Listen for sign-in state changes.
-				      gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+// 				      gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 				      document.getElementById('content').innerHTML ="";
 				      // Scrape the kit numbers from the data you get from the form, then list the kits they match in the spreadsheet. Write the passenger names to an array called PassengerCount
 				      
 				      
-				 // #############################################################################
+				 // #########################################################################
 
 				
 				      scrapeForKits();
 
-				      
-
-				      
-				
-				      // Handle the initial sign-in state.
-				      updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-				      authorizeButton.onclick = handleAuthClick;
-				      signoutButton.onclick = handleSignoutClick;
 				    }, function(error) {
 				      appendPre(JSON.stringify(error, null, 2));
 				    });
 				  }
 				
-				  /**
-				   *  Called when the signed in status changes, to update the UI
-				   *  appropriately. After a sign-in, the API is called.
-				   */
-				  function updateSigninStatus(isSignedIn) {
-				    if (isSignedIn) {
-				      authorizeButton.style.display = 'none';
-				      //changed from 'block' 
-				      signoutButton.style.display = 'none';      
-				    } else {
-				    //changed from 'block'
-				      authorizeButton.style.display = 'none';
-				      signoutButton.style.display = 'none';
-				    }
-				  }
-				
-				  /**
-				   *  Sign in the user upon button click.
-				   */
-				  function handleAuthClick(event) {
-				    gapi.auth2.getAuthInstance().signIn();
-				  }
-				
-				  /**
-				   *  Sign out the user upon button click.
-				   */
-				  function handleSignoutClick(event) {
-				    gapi.auth2.getAuthInstance().signOut();
-				  }
-				
-				
-				// to here
+
 				
 function listKits(Kit) {
 				    gapi.client.sheets.spreadsheets.values.get({
@@ -274,16 +306,16 @@ function listKits(Kit) {
 				
 				          interimArray = row[4].split(', ');
 				         interimArray.forEach(function(object){
-				  			PassengerCount.push(object);
+				  			if (object !== "I don\'t know"){PassengerCount.push(object);}
 				  			});  
 
 				  			countPassengerMatchs();
 
 				        				      } else {
-				       //  appendPre('No data found.');
+// 				       document.getElementById('errorMessages').innerHTML += ('<p style="color:red">No data found.</p>');
                         				      }}				      }
 				    }, function(response) {
-				      appendPre('Error: ' + response.result.error.message);
+				      document.getElementById('errorMessages').innerHTML += ('<p style="color:red">Error: ' + response.result.error.message+'</p>');
 				    });
 				
 				  };
@@ -326,7 +358,18 @@ function listKits(Kit) {
 	}
 	}
   
-				  
+		function TableBuild(){
+		console.log('TableBuild');
+		document.getElementById("FrequencyTable").innerHTML = '';
+		
+		HeatMapTable.style.display = 'block';
+
+		for (var i = 0; i < counts[0].length; i++){
+		var HTMLString = '<tr><td>'+counts[0][i]+'</td><td>'+counts[1][i]+'</td></tr>';
+		document.getElementById("FrequencyTable").innerHTML += HTMLString;
+		}
+		
+		}		  
 				
 				
 				
@@ -337,6 +380,15 @@ function listKits(Kit) {
                 Objectify();
 				update();
 				console.log(tags);
+				CloudButton.style.display = 'none';
+				TableButton.style.display = 'block';
+				});
+				
+		document.getElementById("TableButton").addEventListener("click", function(){
+				console.log("You knocked?");
+				CloudButton.style.display = 'block';
+				TableButton.style.display = 'none';
+				TableBuild();
 				});
 			</script>
 <!-- 
@@ -470,7 +522,7 @@ function listKits(Kit) {
 				console.log("update called");
 				console.log('size: '+w+' by '+h);
 				layout.font("impact").spiral("rectangular");
-				fontSize = d3.scale["sqrt"]().range([15, 30]);
+				fontSize = d3.scale["sqrt"]().range([20, 40]);
 				//         var tags = [
 				//           { key: "Cat in the hat", value: 26 },
 				//           { key: "fish leonard", value: 19 },
@@ -653,8 +705,10 @@ function listKits(Kit) {
 				}
 			</script>
 		</div>
+<!-- 
 	</div>
 </div>
+ -->
 <!-- Bootstrap core JavaScript -->
 <script src="/bootstrap4/js/jquery.min.js">
 </script>
