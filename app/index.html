@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Mayflower Ancestors Help</title>
+    <title>Mayflower Ancestors Gedmatch Kit Results Loader</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
 }
 ul {
     list-style-type: none;
-     list-style-image: url('img/mayflower25x25.png');
+     list-style-image: url('../img/mayflower25x25.png');
 }
 
 .box{
@@ -85,32 +85,51 @@ ul {
     </nav>
 
     <div class="container box">
-        
+
       <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-2">
+      </div></div>        
+      <div class="row">
+      <div class="col-lg-8">
     
     <br /><br />    <br /><br />
-    <h3>Gedmatch kit Mayflower Ancestor Interrogator (Beta)</h3>
-    
+    <h3>Mayflower Ancestor Gedmatch Kit Interrogator (Beta)</h3>
+  <p>A simple tool for displaying which kits in the Mayflower Ancestors Project GEDMatch results are associated with which passenger ancestors in the project spreadsheet.</p>  
    
 <form action="./scrapepaste.php" method="get">
   <div class="form-group"> 
 <label for="w3review">Paste Ancestor Report page here [Limit 100 kits!]:</label>
 <textarea id="ReportPage" type="text" name="ReportPage" class="form-control" rows="10">
-
-  </textarea>
+</textarea>
   <br><br>
  <button type="submit" class="btn btn-primary">Submit</button>
 </div>
 </form>
 
 <p>
-Go to GEDmatch and generate a match report from the <emphasis>Mayflower Ancestors Proven and Unproven Project</emphasis> with your kit number. Your results page will look like the image below.
+Go to GEDmatch and generate a match report from the <emphasis>Mayflower Ancestors Proven and Unproven Project</emphasis> with your kit number. Called a "Segment Analysis" report your results page will look like the image below.</p>
     
-    Paste the entire results page into the box above and hit submit (BETA LIMIT: UNLESS you match more than 100 kits -- just paste up to 100 rows in that case). You'll get a page with the kit numbers you match and the passenger names that they've listed as their possible ancestors. The source for this information is the <a href="https://docs.google.com/spreadsheets/d/1xlRZeP_3CrZ9J_gweVqnQfOIhdGhbr08p3zkcGQL1LE/edit#gid=1692782076" target="_blank">spreadsheet of kit numbers</a> and passenger associations for the GEDmatch Mayflower Ancestors (Proven and Unproven) Project on GEDmatch. 
+<p>On the GEDmatch page, use Ctrl/Cmd A to select the entire page, then use Ctrl/Cmd C to copy it into memory. Return to this page and use Ctrl/Cmd V to paste it into the box above and press the "Submit" button. The kits will be compared with those in the project <a href="https://docs.google.com/spreadsheets/d/1xlRZeP_3CrZ9J_gweVqnQfOIhdGhbr08p3zkcGQL1LE/edit#gid=1692782076" target="_blank">spreadsheet of kit numbers</a> and passenger associations, and return a list of paired passenger and kit number information. There's also an option to generate a "Word Cloud" of passenger names. The bigger the name, the more frequently you've matched other kit owners who claim descent from that name. You can also view the frequency of mentions as a table. 
+
+ <img src="../img/GEDmatch.png" class="img-fluid">
+
+This software is still in development. Known issues:
+<ul>
+<li>Pages bigger than 100 matches will cause the results page not to load. Google limits the number of times I can query the spreadsheet to 100 requests per second unless I pay them money. I'll try to work out a way to space out the queries or break the data up.</li>
+<li>The user interface is awful. Apologies, I want to make sure the basic idea of this page is viable and will stand up to multiple users before I figure out where the buttons should go and how the information can be better presented. </li>
+
+<li>The code for this project is open source. You're welcome to contribute or fork it for as your own your, but be aware you'll need your own API keys. The ones included here will only work from my domain. 
+</li>
+</ul>
+
+If you encounter other bugs or have suggestions, I'd love to hear from you: use the contact button above or write to me at brianfit58[@]gmail.com. And, as ever, if you find my efforts helpful, you're always welcome to <a href="https://www.buymeacoffee.com/brianfit" target="_blank">buy me a virtual coffee!</a> 
     
-</p>        <img src="../img/GEDmatch.png" class="img-fluid">
+</p>       
 </div>
+      <div class="row">
+      <div class="col-lg-2">
+      </div></div> 
+      
 </div>
 </div>
 
