@@ -22,7 +22,8 @@
 	<style>		body {
 		  padding-top: 54px;
 		}
-		@media (min-width: 992px) {
+	/* 
+	@media (min-width: 992px) {
 		  body {
 		    padding-top: 56px;
 		  }
@@ -32,6 +33,7 @@
 		  max-width: 100%;
 		  height: auto;
 		}
+ */
 		ul {
 		    list-style-type: none;
 		     list-style-image: url('../img/mayflower25x25.png');
@@ -46,10 +48,13 @@
 		  background-image: url('../img/Mayflower-Halsall.jpg');
 		}
 		
+/* 
 				      #wordcloud {
-				        width: 100%;
+				        width: 1120px;
 				        height: 570px;
 				      }
+ */
+
 
 
 		
@@ -83,10 +88,10 @@
 	</div>
 </nav>
 <!-- Page Content -->
-<div class="container box">
+<div class="container-fluid box">
 	<div class="row">
-		<div class="col-lg-12 text-center align-self-center">
-			<div id="errorMessages">
+		<div class="col-sm-12 text-center align-self-center">
+			<div id="errorMessages" style="margin-left:60px;margin-right:60px;">
 			</div>
 <?php 
 
@@ -130,7 +135,7 @@ Begin HTML
 	</div>
 <!-- Row -->
 	<div class="row">
-		<div class="col-lg-12 text-center align-self-center">
+		<div class="col-sm-12 text-center align-self-center">
 			<div id="wordcloud">
 			</div>
 			<div id="source">
@@ -190,6 +195,7 @@ Begin Script
 	  var signoutButton = document.getElementById('signout_button');
 	   var CloudButton = document.getElementById('CloudButton');
 	  var TableButton = document.getElementById('TableButton');
+	  var GoodPaste = true;
 	
 	  /**
 	   *  On load, called to load the auth2 library and API client library.
@@ -210,7 +216,7 @@ Begin Script
 	                        var KitArray = obj.split("\t").map(function(item) {
 	                        return item.trim();
 	                                });
-	   if (KitArray.length <= 1) { document.getElementById('errorMessages').innerHTML += '<p style="color:red">Error: Sorry, invalid data. you need to paste all or part of the table of results or the entire page. Click <a href="https://www.brian-fitzgerald.net/mayflower-ancestors/app/?fbclid=IwAR3lFbIL9e1ab8QL9ban-tXJbCbAwx3ZkPY3USzrF_CjMgRVI7p_bKjFt2s" target="_blank">here to return to form.</a></p>';}                            
+	   if (KitArray.length <= 1) { document.getElementById('errorMessages').innerHTML += '<p style="color:red">Error: Sorry, invalid data. you need to paste all or part of the table of results or the entire page called "Segment Analysis" that you get when running a kit through the GEDmatch Ancestors Project, <emphasis>Mayflower Passengers (Proven and Unproven)</emphasis>. Use the back button or <a href="https://www.brian-fitzgerald.net/mayflower-ancestors/app/?fbclid=IwAR3lFbIL9e1ab8QL9ban-tXJbCbAwx3ZkPY3USzrF_CjMgRVI7p_bKjFt2s" target="_blank">click here to return to form.</a></p>'; GoodPaste = false;}                            
 		KitArray.length = Math.min(KitArray.length, 98);
 		console.log('kl: '+KitArray.length);
 	 for (var v = 0; v < KitArray.length; v++){ 
@@ -376,7 +382,7 @@ Begin Script
 					});
 					
 			setTimeout(function(){
-	    CloudButton.style.display = 'block';
+	    if (GoodPaste == true) {CloudButton.style.display = 'block';}
 	}, 7000);
 </script>
 <!-- 

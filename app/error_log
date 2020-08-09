@@ -47,3 +47,7 @@ Stack trace:
 [03-Aug-2020 13:27:53 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/brianfit/public_html/mayflower-ancestors/app/scrapepaste.php on line 107
 [03-Aug-2020 13:32:46 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/brianfit/public_html/mayflower-ancestors/app/scrapepaste.php on line 107
 [03-Aug-2020 13:33:38 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/brianfit/public_html/mayflower-ancestors/app/scrapepaste.php on line 107
+[09-Aug-2020 07:33:49 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/brianfit/public_html/mayflower-ancestors/app/scrapepaste.php on line 93
+[09-Aug-2020 07:34:54 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/brianfit/public_html/mayflower-ancestors/app/scrapepaste.php on line 93
+[09-Aug-2020 07:35:35 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/brianfit/public_html/mayflower-ancestors/app/scrapepaste.php on line 93
+[09-Aug-2020 07:36:51 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/brianfit/public_html/mayflower-ancestors/app/scrapepaste.php on line 93
