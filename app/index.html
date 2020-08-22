@@ -11,6 +11,11 @@
 
   gtag('config', 'UA-2498175-1');
 </script>
+ <script>
+  if(/^\?fbclid=/.test(location.search))
+     location.replace(location.href.replace(/\?fbclid.+/, ""));
+     locaation.reload();
+ </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -105,13 +110,12 @@ ul {
  <button type="submit" class="btn btn-primary">Submit</button>
 </div>
 </form>
-
-<p>
-Go to GEDmatch and generate a match report from the <emphasis>Mayflower Ancestors Proven and Unproven Project</emphasis> with your kit number. Called a "Segment Analysis" report your results page will look like the image below.</p>
-    
-<p>On the GEDmatch page, use Ctrl/Cmd A to select the entire page, then use Ctrl/Cmd C to copy it into memory. Return to this page and use Ctrl/Cmd V to paste it into the box above and press the "Submit" button. The kits will be compared with those in the project <a href="https://docs.google.com/spreadsheets/d/1xlRZeP_3CrZ9J_gweVqnQfOIhdGhbr08p3zkcGQL1LE/edit#gid=1692782076" target="_blank">spreadsheet of kit numbers</a> and passenger associations, and return a list of paired passenger and kit number information. There's also an option to generate a "Word Cloud" of passenger names. The bigger the name, the more frequently you've matched other kit owners who claim descent from that name. You can also view the frequency of mentions as a table. 
-
- <img src="../img/GEDmatch.png" class="img-fluid">
+<p>Go to GEDmatch and generate a match report from the <emphasis>Mayflower Ancestors Proven and Unproven Project</emphasis> with your kit number. On the GEDmatch page, use Ctrl/Cmd A to select the entire page, then use Ctrl/Cmd C to copy it into memory. Return to this page and use Ctrl/Cmd V to paste it into the box above and press the "Submit" button. Confused? Here's a step by step video: </p>
+<video width="720" height="480" controls>
+  <source src="movie.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p>The kits will be compared with those in the project <a href="https://docs.google.com/spreadsheets/d/1xlRZeP_3CrZ9J_gweVqnQfOIhdGhbr08p3zkcGQL1LE/edit#gid=1692782076" target="_blank">spreadsheet of kit numbers</a> and passenger associations, and return a list of paired passenger and kit number information. There's also an option to generate a "Word Cloud" of passenger names. The bigger the name, the more frequently you've matched other kit owners who claim descent from that name. You can also view the frequency of mentions as a table. </p>
 
 This software is still in development. Known issues:
 <ul>

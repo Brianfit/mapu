@@ -22,7 +22,8 @@
 	<style>		body {
 		  padding-top: 54px;
 		}
-		@media (min-width: 992px) {
+	/* 
+	@media (min-width: 992px) {
 		  body {
 		    padding-top: 56px;
 		  }
@@ -32,6 +33,7 @@
 		  max-width: 100%;
 		  height: auto;
 		}
+ */
 		ul {
 		    list-style-type: none;
 		     list-style-image: url('../img/mayflower25x25.png');
@@ -39,17 +41,27 @@
 		
 		.box{
 		  height: 100%;
-		  width: 100%;
+		  width:  100%;
 		  background-size: cover;
 		  display: table;
 		  background-attachment: fixed;
 		  background-image: url('../img/Mayflower-Halsall.jpg');
 		}
+
+    .table {
+   margin: auto;
+   width: 70% !important; 
+}
 		
+
+		
+/* 
 				      #wordcloud {
-				        width: 100%;
+				        width: 1120px;
 				        height: 570px;
 				      }
+ */
+
 
 
 		
@@ -83,15 +95,28 @@
 	</div>
 </nav>
 <!-- Page Content -->
-<div class="container box">
+<div class="container-fluid box">
 	<div class="row">
-		<div class="col-lg-12 text-center align-self-center">
-			<div id="errorMessages">
+		<div class="col-sm-12 text-center align-self-center">
+			<div id="errorMessages" style="margin-left:60px;margin-right:60px;">
 			</div>
 <?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+if(isset($_GET['ReportPage'])) {
+  $Grab = $_GET['ReportPage'];
+
 
         $matches = [];
-        preg_match_all('/\n\t[0-9,a-z,A-Z]+/', $_GET['ReportPage'], $matches, PREG_UNMATCHED_AS_NULL);
+        $logs = [];
+  preg_match_all('/\n\t[0-9,a-z,A-Z]+/', $Grab, $matches, PREG_UNMATCHED_AS_NULL);
+
+  preg_match_all('/\n[[:space:]]\t[0-9,a-z,A-Z]+/', $Grab, $logs, PREG_UNMATCHED_AS_NULL);     
+        $matches = array_merge($matches, $logs);
+        
+
+
         $kitString = '';
         foreach ($matches as $innerArray) {
         //  Check type
@@ -100,13 +125,17 @@
         foreach ($innerArray as $value) {
         //             echo $value.'<br>';
             $kitString = $kitString.$value;
+
         }
         }else{
         // one, two, three
         echo $innerArray.'!!!!!';
         }
-        }
+        }}
         ?>
+        
+        
+        
 <!-- 
 End of PHP
 ***************************************************************************************
@@ -114,7 +143,7 @@ Begin HTML
   -->
 			<br>
 <!--     Content loads in this space -->
-			<table class="table table-striped table-bordered ">
+			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
 						<th scope="col">Kit</th>
@@ -130,7 +159,7 @@ Begin HTML
 	</div>
 <!-- Row -->
 	<div class="row">
-		<div class="col-lg-12 text-center align-self-center">
+		<div class="col-sm-12 text-center align-self-center">
 			<div id="wordcloud">
 			</div>
 			<div id="source">
@@ -162,8 +191,8 @@ Begin Script
 	
 	  // Client ID and API key from the Developer Console
 	  console.log('VARIABLE DEFINITIONS');
-	 var CLIENT_ID = '221062367563-hoajfa12orf1537ijq6l45te6n311iem.apps.googleusercontent.com';
-	var API_KEY = 'AIzaSyAvqBZcr1jg6Nav_-cgsQGRJnsf3Q3A_bg';
+	 var CLIENT_ID = '122575581678-ga1b5324h5f8356bk8ovbce284e38nr7.apps.googleusercontent.com';
+	var API_KEY = 'AIzaSyDAReMTbN6W4ydEFOrVGSYZCACgFuBVp6Y';
 	        //This Key is URL restricted to use within my domain
 	  var tags = [];
 	  tags.length = 0;
@@ -188,8 +217,9 @@ Begin Script
 	
 	  var authorizeButton = document.getElementById('authorize_button');
 	  var signoutButton = document.getElementById('signout_button');
-	   var CloudButton = document.getElementById('CloudButton');
+	  var CloudButton = document.getElementById('CloudButton');
 	  var TableButton = document.getElementById('TableButton');
+	  var GoodPaste = true;
 	
 	  /**
 	   *  On load, called to load the auth2 library and API client library.
@@ -206,11 +236,14 @@ Begin Script
 	   
 	   function scrapeForKits(done){
 	
-	     var obj = <?php echo json_encode($kitString); ?>;
+	     var obj = <?php echo json_encode($kitString, JSON_UNESCAPED_UNICODE); ?>;
+	     var errj = <?php json_last_error_msg() ?>
+	     console.log(obj);
+	     console.log('yyy'+errj);
 	                        var KitArray = obj.split("\t").map(function(item) {
 	                        return item.trim();
 	                                });
-	   if (KitArray.length <= 1) { document.getElementById('errorMessages').innerHTML += '<p style="color:red">Error: Sorry, invalid data. you need to paste all or part of the table of results or the entire page. Click <a href="https://www.brian-fitzgerald.net/mayflower-ancestors/app/?fbclid=IwAR3lFbIL9e1ab8QL9ban-tXJbCbAwx3ZkPY3USzrF_CjMgRVI7p_bKjFt2s" target="_blank">here to return to form.</a></p>';}                            
+	   if (KitArray.length <= 1) { document.getElementById('errorMessages').innerHTML += '<p style="color:red">Error: Sorry, invalid data. you need to paste all or part of the table of results or the entire page called "Segment Analysis" that you get when running a kit through the GEDmatch Ancestors Project, <emphasis>Mayflower Passengers (Proven and Unproven)</emphasis>. Use the back button or <a href="https://www.brian-fitzgerald.net/mayflower-ancestors/app/?fbclid=IwAR3lFbIL9e1ab8QL9ban-tXJbCbAwx3ZkPY3USzrF_CjMgRVI7p_bKjFt2s" target="_blank">click here to return to form.</a></p>'; GoodPaste = false;}                            
 		KitArray.length = Math.min(KitArray.length, 98);
 		console.log('kl: '+KitArray.length);
 	 for (var v = 0; v < KitArray.length; v++){ 
@@ -376,7 +409,7 @@ Begin Script
 					});
 					
 			setTimeout(function(){
-	    CloudButton.style.display = 'block';
+	    if (GoodPaste == true) {CloudButton.style.display = 'block';}
 	}, 7000);
 </script>
 <!-- 

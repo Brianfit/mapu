@@ -1,0 +1,16 @@
+[22-Aug-2020 14:45:06 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 15
+[22-Aug-2020 14:45:58 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 14
+[22-Aug-2020 14:46:02 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 14
+[22-Aug-2020 14:47:32 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 14
+[22-Aug-2020 14:49:53 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 18
+[22-Aug-2020 14:49:56 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 18
+[22-Aug-2020 14:54:16 UTC] PHP Notice:  Array to string conversion in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 17
+[22-Aug-2020 14:54:36 UTC] PHP Notice:  Array to string conversion in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 17
+[22-Aug-2020 14:54:48 UTC] PHP Notice:  Array to string conversion in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 17
+[22-Aug-2020 14:55:32 UTC] PHP Notice:  Array to string conversion in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 17
+[22-Aug-2020 14:55:35 UTC] PHP Notice:  Array to string conversion in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 17
+[22-Aug-2020 15:24:07 UTC] PHP Warning:  preg_match_all(): Unknown modifier '+' in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 16
+[22-Aug-2020 15:37:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function jsdon_encode() in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/brianfit/public_html/mayflower-ancestors/app/test/index.php on line 20
