@@ -49,6 +49,9 @@ ul {
   background-attachment: fixed;
   background-image: url('img/Mayflower-Halsall.jpg');
 }
+.btn-secondary{
+margin-left: 10px;
+}
 
     </style>
 
@@ -59,7 +62,7 @@ ul {
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Mayflower Ancestors Help</a>
+        <a class="navbar-brand" href="#">Mayflower Ancestors Project</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -72,12 +75,16 @@ ul {
               </a>
             </li>
  -->
+<li class="nav-item"> 
+				<button id="InterrogatorButton" class="btn btn-secondary">Interrogator (Beta)</button>
+				 </li>
+
+<li class="nav-item"> 
+				<button id="CoffeeButton" class="btn btn-secondary">About</button>
+				 </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.buymeacoffee.com/brianfit">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="mailto:brianfit58@gmail.com?subject=Mayflower%20Project%20">
-﻿Contact</a>
+            <button id="ContactButton" class="btn btn-secondary">
+            Contact</button>
             </li>
           </ul>
         </div>
@@ -154,7 +161,13 @@ If you have a theory about which passenger you're related to, you can look at th
 </p>
 
 <p>
-Eyeballing the spreadsheet and your match list is pretty imperfect and tiring though. You can also interrogate the passenger associations with kits in your match list. Copy and paste the kit numbers from the Gedmatch table of your genetic matches and enter them into a different tab on the spreadsheet, the one marked "Which Passenger Kit search" to get the kit info and the passengers that kit is related to. 
+Eyeballing the spreadsheet and your match list is pretty imperfect and tiring though. 
+</p>
+
+<div style="left-margin:15px"><p><span style="color:red"><strong>UPDATE:</span>I've created and automated way to interrogate the spreadsheet to see which of your matched kits are associated with which passengers. Give it a try: <a href="https://brian-fitzgerald.net/mayflower-ancestors/app"> The Mayflower Ancestors Gedmatch Kit Interrogator.</a></strong></p></div>
+
+<p>
+You can also interrogate the passenger associations with kits in your match list directly in the spreadsheet. Copy and paste the kit numbers from the Gedmatch table of your genetic matches and enter them into a different tab on the spreadsheet, the one marked "Which Passenger Kit search" to get the kit info and the passengers that kit is related to. 
 </p>
 <img src="img/scroll.png" class="img-fluid">
 <p>
@@ -208,7 +221,9 @@ When I started this project, I was trying to make it easier to map small segment
 </p>
 
 <p>
-So while I've come to accept that the method of comparing small matches may be unlikely to have merit, and I'm cautioning against using it, I'll leave my instructions <a href="smallsegments.html">on an archived page</a> for anyone who wants to explore for themselves. Like all things relating to DNA, we're dealing with likelihood. And while it may be unlikely you've found a small match to a Mayflower passenger, it's not impossible.  But I'll say this: you're far better off using the project with the method above to look for proven descendants, comparing their trees, and examining their document trails. Or finding proven descendants with whom you have a more recent common ancestor who descended from a passenger.   
+So while I've come to accept that the method of comparing small matches may be unlikely to have merit, and I'm cautioning against using it, I'll leave my instructions <a href="smallsegments.html">on an archived page</a> for anyone who wants to explore for themselves. Like all things relating to DNA, we're dealing with likelihood. And while it may be unlikely you've found a small match to a Mayflower passenger, it's not impossible.  
+I'm currently in touch with one project member who appears to have found a "Hopkins Segment" that he has verified across multiple siblings and ancestors as being inherited rather than random, with a strong correlation to multiple other Hopkins descendants. Watch this space!
+
 </p>
 
 <hr>
@@ -248,6 +263,21 @@ So while I've come to accept that the method of comparing small matches may be u
     <!-- Bootstrap core JavaScript -->
     <script src="/bootstrap4/js/jquery.min.js"></script>
     <script src="/bootstrap4/js/bootstrap.bundle.min.js"></script>
+    <script>	
+   document.getElementById("CoffeeButton").addEventListener("click", function(){
+	window.open('https://www.buymeacoffee.com/brianfit');
+	});
+	
+   document.getElementById("ContactButton").addEventListener("click", function(){
+	window.open('https://brian-fitzgerald.net/mayflower-ancestors/contact');
+	});
+	
+	   document.getElementById("InterrogatorButton").addEventListener("click", function(){
+	window.open('https://brian-fitzgerald.net/mayflower-ancestors/app');
+	});
+	
+	
+	</script>
 
   </body>
 
